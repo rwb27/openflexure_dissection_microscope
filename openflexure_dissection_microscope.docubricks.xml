@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="docubricks.xsl"?>
+<docubricks>
+  <part id="1203055511">
+    <name>Support Post</name>
+    <description>Dovetailed mounting post</description>
+    <supplier />
+    <supplier_part_num />
+    <manufacturer_part_num />
+    <url>https://github.com/rwb27/openflexure_dissection_microscope/blob/master/stl/support_post.stl</url>
+    <material_amount>0.029</material_amount>
+    <material_unit>KG</material_unit>
+    <media>
+      <file url="./stl/support_post.stl" />
+      <file url="./assembly_photos/post.JPG" />
+    </media>
+    <manufacturing_instruction />
+  </part>
+  <part id="914505089">
+    <name>Camera Arm</name>
+    <description>Horizontal arm that holds the Raspberry Pi camera module</description>
+    <supplier />
+    <supplier_part_num />
+    <manufacturer_part_num />
+    <url>https://github.com/rwb27/openflexure_dissection_microscope/blob/master/stl/camera_holder.stl</url>
+    <material_amount>0.011</material_amount>
+    <material_unit>KG</material_unit>
+    <media>
+      <file url="./stl/camera_holder.stl" />
+      <file url="./assembly_photos/camera_arm.PNG" />
+    </media>
+    <manufacturing_instruction />
+  </part>
+  <part id="134040165">
+    <name>Raspberry Pi Camera Module v2</name>
+    <description>Raspberry Pi camera module v2
+
+This should come supplied with a disc-shaped tool to adjust the focus, as shown in the pictures.</description>
+    <supplier>RS Components</supplier>
+    <supplier_part_num>913-2664</supplier_part_num>
+    <manufacturer_part_num>Raspberry Pi Camera V2</manufacturer_part_num>
+    <url>https://uk.rs-online.com/web/p/products/9132664/</url>
+    <material_amount />
+    <material_unit>NONE</material_unit>
+    <media>
+      <file url="./assembly_photos/pi_camera.jpg" />
+      <file url="./assembly_photos/focusing_2.JPG" />
+    </media>
+    <manufacturing_instruction />
+  </part>
+  <part id="570706758">
+    <name>M2 Screws, 6mm, cap head</name>
+    <description>Small screws to attach the camera module to the mount.  Length is unimportant but should be at least 4mm</description>
+    <supplier />
+    <supplier_part_num />
+    <manufacturer_part_num />
+    <url />
+    <material_amount />
+    <material_unit>NONE</material_unit>
+    <media />
+    <manufacturing_instruction />
+  </part>
+  <part id="818050501">
+    <name>LED, resistor and cable</name>
+    <description>Ths could be the top part of the  illumination arm from an OpenFlexure Microscope, or any other small light source you happen to have to hand.</description>
+    <supplier />
+    <supplier_part_num />
+    <manufacturer_part_num />
+    <url />
+    <material_amount />
+    <material_unit>NONE</material_unit>
+    <media>
+      <file url="./assembly_photos/illumination_arm_only.jpg" />
+    </media>
+    <manufacturing_instruction />
+  </part>
+  <part id="1720443170">
+    <name>M6 screws, 10mm, cap head</name>
+    <description>These are used to anchor the mounting post to the bench or baseplate.  You might want to swap them for wood screws or longer bolts depending on what you're mounting to.</description>
+    <supplier />
+    <supplier_part_num />
+    <manufacturer_part_num />
+    <url />
+    <material_amount />
+    <material_unit>NONE</material_unit>
+    <media />
+    <manufacturing_instruction />
+  </part>
+  <part id="1573922185">
+    <name>Raspberry Pi Camera Ribbon Cable, long</name>
+    <description>You will need to order a longer ribbon cable for your camera, unless your Raspberry Pi is mounted very close to the camera.</description>
+    <supplier />
+    <supplier_part_num />
+    <manufacturer_part_num />
+    <url />
+    <material_amount />
+    <material_unit>NONE</material_unit>
+    <media />
+    <manufacturing_instruction />
+  </part>
+  <brick id="372140810">
+    <name>OpenFlexure Dissection Microscope</name>
+    <abstract>A mount to allow a Raspberry Pi camera module to be used as a basic dissection/inspection/soldering microscope.</abstract>
+    <long_description>This very simple "microscope" consists of a mounting post (attached to a bench or baseplate) and a ratcheting arm that holds the camera module 20-50mm above the sample, allowing a close-up view, as well as access to manipulate the sample.</long_description>
+    <notes>This borrows a number of bits from the OpenFlexure Microscope</notes>
+    <license>CERN Open Hardware License</license>
+    <media>
+      <file url="./assembly_photos/complete_with_pi.JPG" />
+    </media>
+    <assembly_instruction>
+      <step>
+        <description>Using the two M2 screws, screw the camera module into the holder as shown.</description>
+        <media>
+          <file url="./assembly_photos/insert_camera_1.JPG" />
+          <file url="./assembly_photos/insert_camera_2.JPG" />
+        </media>
+        <component quantity="1" id="578890125" />
+        <component quantity="1" id="2038358255" />
+        <component quantity="1" id="128209647" />
+      </step>
+      <step>
+        <description>Insert the camera cable into the ZIF socket (if you've not already done so)</description>
+        <media>
+          <file url="./assembly_photos/camera_cable.JPG" />
+        </media>
+        <component quantity="1" id="675250053" />
+      </step>
+      <step>
+        <description>Screw the mounting post to the baseplate (or to your workbench).  Ideally, use three screws.  If using only one screw, use the back one as shown.</description>
+        <media>
+          <file url="./assembly_photos/post.JPG" />
+        </media>
+        <component quantity="1" id="1105378040" />
+        <component quantity="1" id="754292425" />
+      </step>
+      <step>
+        <description>Attach the illumination, using blu-tac or similar.  If you are using a bare LED, you may need to put some white tape over it to diffuse the light.</description>
+        <media>
+          <file url="./assembly_photos/illumination_3.JPG" />
+          <file url="./assembly_photos/illumination_1.JPG" />
+          <file url="./assembly_photos/illumination_2.JPG" />
+        </media>
+        <component quantity="1" id="702922007" />
+      </step>
+      <step>
+        <description>Slide the assembled arm onto the mounting post.  Connect to the raspberry pi as shown in the Raspberry Pi camera documentation, and view the image (e.g. with "raspistill -t 0" at the command prompt).  Switch on your illumination (e.g. by connecting it to the 0v and 5v lines on the Raspberry Pi</description>
+        <media>
+          <file url="./assembly_photos/complete_with_pi.JPG" />
+        </media>
+      </step>
+      <step>
+        <description>Using the adjustment tool provided with the camera module, place the tool over the lens, so that the camera is looking through the central hole.  Gently turn the tool until it fits into place on the four small lugs on the lens.  Adjust the focus of the camera with the tool, so that the image is sharp.  You can change the magnification by sliding it up and down on the post, but you will need to adjust the focus after doing so.</description>
+        <media>
+          <file url="./assembly_photos/focusing_1.jpg" />
+          <file url="./assembly_photos/focusing_2.JPG" />
+          <file url="./assembly_photos/focusing_3.JPG" />
+        </media>
+      </step>
+      <step>
+        <description>Done!  Happy observing.</description>
+        <media>
+          <file url="./assembly_photos/complete_with_pi.JPG" />
+        </media>
+      </step>
+    </assembly_instruction>
+    <author id="1978260633" />
+    <function id="128209647">
+      <description>Camera</description>
+      <implementation type="part" quantity="1" id="134040165" />
+    </function>
+    <function id="578890125">
+      <description>Mounting screws for camera</description>
+      <implementation type="part" quantity="2" id="570706758" />
+    </function>
+    <function id="702922007">
+      <description>Illumination</description>
+      <implementation type="part" quantity="0" id="818050501" />
+    </function>
+    <function id="754292425">
+      <description>Mounting screws for post</description>
+      <implementation type="part" quantity="3" id="1720443170" />
+    </function>
+    <function id="2038358255">
+      <description />
+      <implementation type="part" quantity="1" id="914505089" />
+    </function>
+    <function id="1105378040">
+      <description />
+      <implementation type="part" quantity="1" id="1203055511" />
+    </function>
+    <function id="675250053">
+      <description />
+      <implementation type="part" quantity="1" id="1573922185" />
+    </function>
+  </brick>
+  <author id="1978260633">
+    <name>Max Mustermann</name>
+    <email>example@docubricks.com</email>
+    <orcid>For researchers, get one at orcid.org</orcid>
+    <affiliation>University of Cambridge</affiliation>
+  </author>
+</docubricks>
