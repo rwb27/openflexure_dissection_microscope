@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xml" href="docubricks.xsl"?>
 <docubricks>
-  <part id="1203055511">
+  <physical_part id="1203055511">
     <name>Support Post</name>
     <description>Dovetailed mounting post</description>
     <supplier />
@@ -15,8 +15,8 @@
       <file url="./assembly_photos/post.JPG" />
     </media>
     <manufacturing_instruction />
-  </part>
-  <part id="914505089">
+  </physical_part>
+  <physical_part id="914505089">
     <name>Camera Arm</name>
     <description>Horizontal arm that holds the Raspberry Pi camera module</description>
     <supplier />
@@ -30,12 +30,10 @@
       <file url="./assembly_photos/camera_arm.PNG" />
     </media>
     <manufacturing_instruction />
-  </part>
-  <part id="134040165">
+  </physical_part>
+  <physical_part id="134040165">
     <name>Raspberry Pi Camera Module v2</name>
-    <description>Raspberry Pi camera module v2
-
-This should come supplied with a disc-shaped tool to adjust the focus, as shown in the pictures.</description>
+    <description>Raspberry Pi camera module v2. This should come supplied with a disc-shaped tool to adjust the focus, as shown in the pictures.</description>
     <supplier>RS Components</supplier>
     <supplier_part_num>913-2664</supplier_part_num>
     <manufacturer_part_num>Raspberry Pi Camera V2</manufacturer_part_num>
@@ -47,8 +45,8 @@ This should come supplied with a disc-shaped tool to adjust the focus, as shown 
       <file url="./assembly_photos/focusing_2.JPG" />
     </media>
     <manufacturing_instruction />
-  </part>
-  <part id="570706758">
+  </physical_part>
+  <physical_part id="570706758">
     <name>M2 Screws, 6mm, cap head</name>
     <description>Small screws to attach the camera module to the mount.  Length is unimportant but should be at least 4mm</description>
     <supplier />
@@ -59,8 +57,8 @@ This should come supplied with a disc-shaped tool to adjust the focus, as shown 
     <material_unit>NONE</material_unit>
     <media />
     <manufacturing_instruction />
-  </part>
-  <part id="818050501">
+  </physical_part>
+  <physical_part id="818050501">
     <name>LED, resistor and cable</name>
     <description>Ths could be the top part of the  illumination arm from an OpenFlexure Microscope, or any other small light source you happen to have to hand.</description>
     <supplier />
@@ -73,8 +71,8 @@ This should come supplied with a disc-shaped tool to adjust the focus, as shown 
       <file url="./assembly_photos/illumination_arm_only.jpg" />
     </media>
     <manufacturing_instruction />
-  </part>
-  <part id="1720443170">
+  </physical_part>
+  <physical_part id="1720443170">
     <name>M6 screws, 10mm, cap head</name>
     <description>These are used to anchor the mounting post to the bench or baseplate.  You might want to swap them for wood screws or longer bolts depending on what you're mounting to.</description>
     <supplier />
@@ -85,8 +83,8 @@ This should come supplied with a disc-shaped tool to adjust the focus, as shown 
     <material_unit>NONE</material_unit>
     <media />
     <manufacturing_instruction />
-  </part>
-  <part id="1573922185">
+  </physical_part>
+  <physical_part id="1573922185">
     <name>Raspberry Pi Camera Ribbon Cable, long</name>
     <description>You will need to order a longer ribbon cable for your camera, unless your Raspberry Pi is mounted very close to the camera.</description>
     <supplier />
@@ -97,7 +95,7 @@ This should come supplied with a disc-shaped tool to adjust the focus, as shown 
     <material_unit>NONE</material_unit>
     <media />
     <manufacturing_instruction />
-  </part>
+  </physical_part>
   <brick id="372140810">
     <name>OpenFlexure Dissection Microscope</name>
     <abstract>A mount to allow a Raspberry Pi camera module to be used as a basic dissection/inspection/soldering microscope.</abstract>
