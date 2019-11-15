@@ -22,16 +22,19 @@ wall_t = 2;
 w = camera_pcb[0] + 1 + 4;
 starty = -camera_pcb[1]/2-2.4; //edge of the PCB
 base_h = 7.5; //thickness of the camera mount plate (lens pokes through this)
-dt_clip = [front_dovetail_w, 16, 14]; //size of the dovetail clip
+dt_clip = [front_dovetail_w, 16, 12]; //size of the dovetail clip
 arm_end_y = front_dovetail_y-dt_clip[1]-4;
 
+beam_angle = 30;
+
 // parameters of the lens
-pedestal_h = 3 + base_h;
-//lens_r = 13/2; // for flanged plastic condenser
-lens_r = 16/2; // for 16mm plastic condenser
-aperture_r = lens_r-1.1;
-lens_t = 1;
-base_r = lens_r+2;
+pedestal_h = 2 + base_h;
+lens_r = 3; // for pi lens
+aperture_r = lens_r-1.0;
+lens_t = 2.5+0.5;
+base_r = lens_r+0.8+(pedestal_h+lens_t-1.5)*tan(beam_angle);
+//base_r = lens_r+5;
+
 
 difference(){
     union(){
@@ -56,11 +59,19 @@ difference(){
         translate([0,front_dovetail_y, 0]) mirror([0,1,0]) dovetail_clip(dt_clip, slope_front=2, solid_bottom=0.2);
         
         // the lens holder
-        trylinder_gripper(inner_r=lens_r, grip_h=pedestal_h + lens_t/3,h=pedestal_h+lens_t+1.5, base_r=base_r, flare=0.5);
+        trylinder_gripper(inner_r=lens_r, grip_h=pedestal_h + lens_t - 1.5, h=pedestal_h+lens_t, base_r=base_r, flare=0.5);
         // pedestal to raise the lens up within the gripper
-        cylinder(r=aperture_r+0.8,h=pedestal_h);
+        cylinder(r1=aperture_r+0.8+pedestal_h*tan(beam_angle), r2=aperture_r+0.8,h=pedestal_h, $fn=12);
     }
     
     // hole for the beam passing through the lens
-    cylinder(r=aperture_r,h=999,center=true);
+    translate([0,0,pedestal_h]) reflect([1,0,0]) rotate([0,beam_angle+180,0]){
+        translate([0,0,-0.5]) cylinder(r=aperture_r,h=999, $fn=12);
+        translate([0,0,5]) cylinder(d=5,h=999, $fn=12);
+    } 
+    //rotate([90,0,0]) cylinder(r=999,h=999,$fn=3);
+    //difference(){
+    //    cube(999, center=true);
+    //    cylinder(d=14, h=999,center=true);
+    //}
 }
