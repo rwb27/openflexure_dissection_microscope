@@ -25,15 +25,22 @@ base_h = 7.5; //thickness of the camera mount plate (lens pokes through this)
 dt_clip = [front_dovetail_w, 16, 12]; //size of the dovetail clip
 arm_end_y = front_dovetail_y-dt_clip[1]-4;
 
-beam_angle = 30;
+beam_angle = 20;
+led_shift = 1;
 
-// parameters of the lens
+// parameters of the lower lens
 pedestal_h = 2 + base_h;
 lens_r = 3; // for pi lens
 aperture_r = lens_r-1.0;
 lens_t = 2.5+0.5;
 base_r = lens_r+0.8+(pedestal_h+lens_t-1.5)*tan(beam_angle);
 //base_r = lens_r+5;
+
+// parameters of the upper lens
+pedestal2_h = 20.5;
+lens2_r = 13/2;
+lens2_t = 1;
+base2_r = base_r + 0.8;
 
 
 difference(){
@@ -62,12 +69,23 @@ difference(){
         trylinder_gripper(inner_r=lens_r, grip_h=pedestal_h + lens_t - 1.5, h=pedestal_h+lens_t, base_r=base_r, flare=0.5);
         // pedestal to raise the lens up within the gripper
         cylinder(r1=aperture_r+0.8+pedestal_h*tan(beam_angle), r2=aperture_r+0.8,h=pedestal_h, $fn=12);
+
+        // the collimating lens (lens 2)
+        trylinder_gripper(inner_r=lens2_r, grip_h=pedestal2_h + lens2_t/3,h=pedestal2_h+lens2_t+1.5, base_r=base2_r, flare=0.5);
+        // pedestal to raise the lens up within the gripper
+        difference(){
+            cylinder(r=lens2_r-0.3,h=pedestal2_h);
+            cylinder(r=lens2_r-0.3-0.85,h=999,center=true);
+        }
     }
     
     // hole for the beam passing through the lens
-    translate([0,0,pedestal_h]) reflect([1,0,0]) rotate([0,beam_angle+180,0]){
-        translate([0,0,-0.5]) cylinder(r=aperture_r,h=999, $fn=12);
-        translate([0,0,5]) cylinder(d=5,h=999, $fn=12);
+    translate([0,0,pedestal_h]) reflect([1,0,0]) rotate([0,beam_angle+180,0]) sequential_hull(){
+        translate([0,0,-0.5]) cylinder(r=aperture_r,h=0.05, $fn=12);
+        translate([0,0,3.5]) cylinder(r=aperture_r,h=0.05, $fn=12);
+        translate([led_shift,0,5]) cylinder(d=5,h=0.05, $fn=12);
+        translate([led_shift,0,9]) cylinder(d=5,h=0.05, $fn=12);
+        translate([led_shift,0,9]) cylinder(d=6.5,h=999, $fn=12);
     } 
     //rotate([90,0,0]) cylinder(r=999,h=999,$fn=3);
     //difference(){
