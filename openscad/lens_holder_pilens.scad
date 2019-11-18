@@ -47,14 +47,14 @@ difference(){
     union(){
         // plate that the camera sits on
         hull(){
-            cylinder(r=base_r, h=base_h, $fn=32);
-            translate([-base_r-0.5-wall_t,0,0]) cube([2*(base_r+0.5+wall_t),wall_t,base_h]);
+            cylinder(r=base2_r, h=base_h, $fn=32);
+            translate([-base2_r-0.5-wall_t,0,0]) cube([2*(base2_r+0.5+wall_t),wall_t,base_h]);
             translate([-dt_clip[0]/2, arm_end_y,0]) cube([dt_clip[0], wall_t, base_h]);
         }
         
         // walls either side for stiffness
         reflect([1,0,0]) sequential_hull(){
-            translate([-base_r-0.5-wall_t,0,0])  cube([wall_t, wall_t, base_h]);
+            translate([-base2_r-0.5-wall_t,0,0])  cube([wall_t, wall_t, base_h]);
             translate([-dt_clip[0]/2, arm_end_y,0]) cube([wall_t, wall_t, dt_clip[2]]);
         }
         
